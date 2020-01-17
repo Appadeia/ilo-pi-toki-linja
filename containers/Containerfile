@@ -1,0 +1,8 @@
+FROM golang:stretch
+
+WORKDIR $GOPATH/src
+
+RUN CGO_ENABLED=0 go get -v \
+	github.com/appadeia/ilo-pi-toki-linja
+
+ENTRYPOINT ["/go/bin/ilo-pi-toki-linja"]
